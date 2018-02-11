@@ -217,7 +217,9 @@ canvas {
 				@include vendor-prefix(transition, background-color .3s ease);
 
 				.fas, .far, .fal, .fab { margin-right: 10px; }
-				&:hover { background-color: $grey-850; }
+				&:hover {
+					background-color: $grey-850; 
+				}
 			}
 			.social-buttons {
 				display: inline-block;
