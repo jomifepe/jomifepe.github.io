@@ -81,18 +81,17 @@ canvas {
 .right {
   top: 0;
   pointer-events: none;
-  width: 50%;
   height: 100vh;
 }
 
 .left {
+  width: 100%;
   left: 0;
   position: relative;
   overflow: hidden;
 }
 
 .right {
-  left: 50%;
   position: fixed;
   z-index: 1;
 }
@@ -111,15 +110,6 @@ canvas {
   transform: translateX(-10%);
 }
 
-.content-wrapper {
-  pointer-events: none;
-  z-index: 2;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  visibility: hidden;
-}
-
 .content {
   padding: 30px;
 }
@@ -133,7 +123,8 @@ canvas {
   display: -moz-box;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 8%;
   height: 100vh;
 }
 
@@ -232,6 +223,24 @@ canvas {
 
 .home .info .info-buttons .social-buttons a:not(:last-child) {
   margin-right: 15px;
+}
+
+@media (max-width: 640px) {
+  .home .info .info-title {
+    font-size: 500%;
+  }
+  .home .info .info-body {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home .info .info-title {
+    font-size: 300%;
+  }
+  .home .info .info-body {
+    font-size: 100%;
+  }
 }
 
 #projects {
