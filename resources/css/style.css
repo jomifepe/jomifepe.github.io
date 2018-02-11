@@ -125,6 +125,7 @@ canvas {
   align-items: center;
   justify-content: flex-start;
   margin-left: 8%;
+  padding-right: 8%;
   height: 100vh;
 }
 
@@ -225,7 +226,7 @@ canvas {
   margin-right: 15px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .home .info .info-title {
     font-size: 500%;
   }
