@@ -1,0 +1,41 @@
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Portfolio
+		link(rel="stylesheet", href="./vendors/normalize/css/normalize.min.css")
+		link(rel="stylesheet", href="./resources/css/style.css")
+		link(rel="stylesheet", href="./vendors/font-awesome/css/fontawesome-all.min.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700")
+	body
+		#particles
+		section.wrapper
+			.left
+				.home
+					.info.animated.fadeInLeft
+						.info-title José Pereira
+						.info-body
+							| I'm a 
+							strong Software Developer
+							|  based in Leiria, Portugal 
+							img.country-flag(src="./resources/images/country-flag.png")
+						.info-buttons
+							.pull-left 
+								a.btn-info(href="#info") 
+									i.fas.fa-bars
+									| Portfolio
+							.social-buttons.pull-right
+								a.github(href="https://github.com/jomifepe" target="_blank")
+									i.fab.fa-github.fa-3x
+								a.linkedin(href="https://linkedin.com/in/jomifepe" target="_blank")
+									i.fab.fa-linkedin.fa-3x
+					
+
+			.right
+				.content-wrapper
+
+		script(src="./vendors/jquery/js/jquery-2.1.1.min.js")
+		script(src="./vendors/particles/js/particles.min.js")
+		script(src="./resources/js/scripts.js")
