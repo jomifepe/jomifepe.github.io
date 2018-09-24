@@ -1,208 +1,35 @@
-// $.fn.extend({
-//     animateCss: function (animationName, callback) {
-//         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-//         this.addClass('animated ' + animationName).one(animationEnd, function() {
-//             $(this).removeClass('animated ' + animationName);
-//             if (callback) {
-//               callback();
-//             }
-//         });
-//         return this;
-//     }
-// });
 
-$(document).on('mouseover','.info-buttons .btn-info', function() {
-	$('span', this).html('Work in progress');
-}).on('mouseout', '.info-buttons .btn-info', function() {
-	$('span', this).html('Portfolio');
+$(function() {
+	setTimeout(function() {
+		var terminal = $('.terminal');
+		var caret = $('.terminal-caret', terminal);
+		var text = $('.terminal-text', terminal);
+		typewriter(text, text.data('content'), 50, 0, function() {
+			caret.addClass('blink');
+		});
+						
+	}, 500);
 });
 
-// $(document).ready(function() {
-//     if(!$('#skill-tags-canvas').tagcanvas({
-//         textColour : '#000',
-//         outlineThickness : 0.5,
-//         outlineColour : '#000',
-//         maxSpeed : 0.06,
-//         freezeActive:true,
-//         shuffleTags:true,
-//         shape:'sphere',
-//         zoom:1,
-//         noSelect:true,
-//         textFont:null,
-//         pinchZoom:true,
-//         freezeDecel:true,
-//         fadeIn:2000,
-//         // shadow: '#000',
-//         // shadowBlur: 2,
-//         // shadowOffset: [1, 1],
-//         zoomMax: 1,
-//         zoomMin: 1,
-//         initial: [0.07,-0.07],
-//         depth: 1
-//     })) {
-//         $('.skill-tags').hide();
-//     }
-// });
+var text;
+$(document).on('mouseover','.info-buttons .btn-info', function() {
+  text = $('span', this).text();
+  $('span', this).html('Work in progress');
+}).on('mouseout', '.info-buttons .btn-info', function() {
+  $('span', this).html(text);
+});
 
-// $('.card').tilt({
-//     reverse:            false,
-// 	max:                35,
-// 	perspective:        2000,
-// 	scale:              1,
-// 	speed:              300,
-// 	transition:         true,
-// 	axis:               null,
-// 	reset:              true,
-//     easing:             "cubic-bezier(.03,.98,.52,.99)",
-//     glare:              false,
-//     "max-glare":        1,
-//     "glare-prerender":  false
-// });
-
-// (function($) {
-// 	skel.breakpoints({
-// 		xlarge:	'(max-width: 1680px)',
-// 		large:	'(max-width: 1280px)',
-// 		medium:	'(max-width: 980px)',
-// 		small:	'(max-width: 736px)',
-// 		xsmall:	'(max-width: 480px)'
-// 	});
-
-// 	$(function() {
-// 		var	$window = $(window),
-// 			$body = $('body'),
-// 			$sidebar = $('.sidebar');
-
-// 		// Hack: Enable IE flexbox workarounds.
-//         if (skel.vars.IEVersion < 12)
-//             $body.addClass('is-ie');
-
-// 		// Disable animations/transitions until the page has loaded.
-//         if (skel.canUse('transition'))
-//             $body.addClass('is-loading');
-
-//         $window.on('load', function() {
-//             window.setTimeout(function() {
-//                 $body.removeClass('is-loading');
-//             }, 100);
-//         });
-
-//         var $sidebar_a = $sidebar.find('a');
-
-//         $sidebar_a.addClass('scrolly').on('click', function() {
-    
-//             var $this = $(this);
-//             // External link? Bail.
-//             if ($this.attr('href').charAt(0) != '#')
-//                 return;
-
-//             // Deactivate all links.
-//             $sidebar_a.removeClass('active');
-
-//             // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-//             $this.addClass('active').addClass('active-locked');
-
-//         }).each(function() {
-            
-//             var	$this = $(this),
-//                 id = $this.attr('href'),
-//                 $section = $(id);
-
-//             // No section for this link? Bail.
-//             if ($section.length < 1)
-//                 return;
-
-//             // Scrollex.
-//             $section.scrollex({
-//                 mode: 'middle',
-//                 top: '-20vh',
-//                 bottom: '-20vh',
-//                 initialize: function() {
-
-//                     // Deactivate section.
-//                     if (skel.canUse('transition'))
-//                         $section.addClass('inactive');
-//                 },
-//                 enter: function() {
-//                     // Activate section.
-//                     $section.removeClass('inactive');
-
-//                     // No locked links? Deactivate all links and activate this section's one.
-//                     if ($sidebar_a.filter('.active-locked').length == 0) {
-//                         $sidebar_a.removeClass('active');
-//                         $this.addClass('active');
-//                     } else if ($this.hasClass('active-locked')) {
-//                         // Otherwise, if this section's link is the one that's locked, unlock it.
-//                         $this.removeClass('active-locked');
-//                     }
-//                 }
-//             });
-//         });
-
-// 		// Scrolly.
-//         $('.scrolly').scrolly({
-//             speed: 800,
-//             offset: function() {
-//                 // If <=large, >small, and sidebar is present, use its height as the offset.
-//                 if (skel.breakpoint('large').active
-//                 &&	!skel.breakpoint('small').active
-//                 &&	$sidebar.length > 0)
-//                     return $sidebar.height();
-
-//                 return 0;
-//             }
-//         });
-
-// 		// Spotlights.
-//         $('.spotlights > section').scrollex({
-//             mode: 'middle',
-//             top: '-10vh',
-//             bottom: '-10vh',
-//             initialize: function() {
-//                 // Deactivate section.
-//                 if (skel.canUse('transition'))
-//                     $(this).addClass('inactive');
-//             },
-//             enter: function() {
-//                 // Activate section.
-//                 $(this).removeClass('inactive');
-//             }
-//         }).each(function() {
-//             var	$this = $(this),
-//                 $image = $this.find('.image'),
-//                 $img = $image.find('img'),
-//                 x;
-
-//             // Assign image.
-//             $image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-//             // Set background position.
-//             if (x = $img.data('position'))
-//                 $image.css('background-position', x);
-
-//             // Hide <img>.
-//             $img.hide();
-//         });
-
-// 		// Features.
-//         if (skel.canUse('transition')) {
-//             $('.features').scrollex({
-//                 mode: 'middle',
-//                 top: '-20vh',
-//                 bottom: '-20vh',
-//                 initialize: function() {
-
-//                     // Deactivate section.
-//                     $(this).addClass('inactive');
-//                 },
-//                 enter: function() {
-//                     // Activate section.
-//                     $(this).removeClass('inactive');
-//                 }
-//             });
-//         }
-// 	});
-// })(jQuery);
+function typewriter(element, text, speed, i, callback) {
+	if (i < (text.length)) {
+		element.html(text.substring(0, ++i));
+		setTimeout(function() {
+			typewriter(element, text, speed, i, callback)
+		}, speed);
+	} else {
+		if (callback)
+			callback();
+	}
+}
 
 particlesJS('particles',
   

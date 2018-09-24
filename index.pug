@@ -1,20 +1,26 @@
 doctype
 html(lang="en")
 	head
+		- var author = "José Pereira"
+		- var description = "I'm a Software Developer and Computer Engineering student based in Leiria, Portugal. This is my personal page, where I publish my work and talk about my skills."
+
 		meta(charset="UTF-8")
+		meta(name='description', content=description)
+		meta(name="keywords" content="Software,Developer,HTML,CSS,JavaScript,Java,Android,Portfolio,Leiria")
+		meta(name="author" content=author)
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
-		title José Pereira
+		title #{author}
 
-		meta(property="og:title" content="José Pereira")
-		meta(property="og:description" content="I'm a Software Developer and Computer Engineering student based in Leiria, Portugal. This is my personal page, where I publish my work and talk about my skills.")
+		meta(property="og:title" content=author)
+		meta(property="og:description" content=description)
 		meta(property="og:type" content="website")
 		meta(property="og:url" content="https://jomifepe.github.io/")
 		meta(property="og:image" content="https://jomifepe.github.io/resources/images/me.jpg")
-		meta(property="og:site_name" content="José Pereira")
+		meta(property="og:site_name" content=author)
 		meta(name="twitter:card" content="summary")
-		meta(property="twitter:title" content="José Pereira")
-		meta(name="twitter:description" content="I'm a Software Developer and Computer Engineering student based in Leiria, Portugal. This is my personal page, where I publish my work and talk about my skills.")
+		meta(property="twitter:title" content=author)
+		meta(name="twitter:description" content=description)
 
 		link(rel="stylesheet" href="./vendors/normalize/css/normalize.min.css")
 		link(rel="stylesheet" href="./vendors/font-awesome/css/fontawesome-all.min.css")
@@ -34,24 +40,28 @@ html(lang="en")
 			.left
 				.home
 					.info.animated.fadeInLeft
-						.info-title José Pereira
+						.info-title 
+							img.me(src="resources/images/me.jpg", alt="A picture of me")
+							span José Pereira
 						.info-body
-							| I'm a 
-							strong Software Developer
-							|  and Computer Engineering student based in Leiria, Portugal 
-							img.country-flag(src="./resources/images/country-flag.png")
+							span 
+								| I'm a 
+								span.terminal
+									span.terminal-prompt $ 
+									span.terminal-text(data-content="Software Developer")
+									span.terminal-caret _
+								|  and Computer Engineering student based in Leiria, Portugal 
+								img.country-flag(src="./resources/images/country-flag.png")
 						.info-buttons
-							.pull-left 
-								a.btn-info(href="#info") 
-									i.fas.fa-bars
-									span Portfolio
 							.social-buttons.pull-right
-								a.github(href="https://github.com/jomifepe" target="_blank")
+								a.github(href="https://github.com/jomifepe" target="_blank" title="Github")
 									i.fab.fa-github.fa-3x
-								a.linkedin(href="https://linkedin.com/in/jomifepe" target="_blank")
+								a.linkedin(href="https://linkedin.com/in/jomifepe" target="_blank" title="Linkedin")
 									i.fab.fa-linkedin.fa-3x
+								a.greasyfork(href="https://greasyfork.org/users/192987" target="_blank" title="Greasyfork")
+									i.fab.fa-js-square.fa-3x
 			.right
 				.content-wrapper
 		script(src="./vendors/jquery/js/jquery-2.1.1.min.js")
 		script(src="./vendors/particles/js/particles.min.js")
-		script(src="./resources/js/scripts.js")
+		script(src="./resources/js/scripts.min.js")
