@@ -1,3 +1,3 @@
 # jomifepe.github.io
 
-**This is my portfolio landing page.**
+**This is my portfolio page.**
