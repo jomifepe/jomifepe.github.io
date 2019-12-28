@@ -85,6 +85,18 @@ canvas {
 	position: fixed;
 }
 
+.faded-50 {
+	opacity: .5;
+}
+
+.faded-30 {
+	opacity: .3;
+}
+
+.faded-10 {
+	opacity: .1;
+}
+
 .wrapper {
 	position: relative;
 	display: block;
@@ -159,14 +171,17 @@ canvas {
 				margin-left: 20px; 
 				color: #fff;
 				font-size: 700%;
+				letter-spacing: -1.5px;
 			}
+			img { pointer-events: auto; }
 		}
 		.info-body {
 			pointer-events: none;
 			@include animation-delay(.2s);
 			margin-top: 5px;
 			font-size: 150%;
-			color: #777;
+			color: $body-text-color;
+			letter-spacing: 0.25px;
 			.terminal {
 				font-weight: 700;
 				background: $grey-950;
@@ -206,6 +221,9 @@ canvas {
 					color: $grey-800;
 					display: inline-block;
 					@include vendor-prefix(transition, color .3s ease);
+					font-size: 3em;
+
+					&.email:hover { color: $white; }
 					&.linkedin:hover { color: $social-linkedin; }
 					&.github:hover { color: $social-github; }
 					&.greasyfork:hover { color: $social-greasyfork; }
@@ -244,6 +262,39 @@ img.me {
 	@include animation-delay(.4s);
 }
 
+.more-info {
+	letter-spacing: .12px;
+	margin-top: 16px;
+	font-size: 18px;
+	.fa-heart {
+		color: #ff4757;
+		margin-right: 8px;
+	}	
+	a.linux-text {
+		text-decoration: none;
+		font-weight: 700;
+		color: $grey-500;
+		@include vendor-prefix(transition, color .3s ease);
+		&:hover { color: $tux-orange; }
+	}
+}
+.block {
+	display: block;
+}
+
+.text-mono {
+	font-family: $font-mono;
+}
+
+.android-text {
+	font-weight: 700;
+	color: $grey-500;
+	@include vendor-prefix(transition, color .3s ease);
+	&:hover {
+		color: $android-green;
+	}
+}
+
 #nav-projects {
 	@include animation-delay(.2s);
 }
@@ -264,6 +315,9 @@ img.me {
 			.info-body { font-size: 120%; }
 		}
 	}
+	.more-info {
+		font-size: 16px;
+	}
 }
 @media (max-width: 624px) {
 	img.me {
@@ -278,6 +332,12 @@ img.me {
 			.info-body { font-size: 100%; }
 		}
 	}
+	.more-info {
+		font-size: 15px;
+	}
+	.social-buttons {
+		a { font-size: 2.3em !important; }
+	}		
 }
 @media (max-width: 430px) {
 	.info-title {
@@ -287,6 +347,12 @@ img.me {
 			display: block;
 		}
 	}
+	.more-info {
+		font-size: 14px;
+	}
+	.social-buttons {
+		a { font-size: 2em !important; }
+	}	
 }
 
 

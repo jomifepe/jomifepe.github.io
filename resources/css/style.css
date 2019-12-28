@@ -75,6 +75,18 @@ canvas {
   position: fixed;
 }
 
+.faded-50 {
+  opacity: .5;
+}
+
+.faded-30 {
+  opacity: .3;
+}
+
+.faded-10 {
+  opacity: .1;
+}
+
 .wrapper {
   position: relative;
   display: block;
@@ -142,6 +154,11 @@ canvas {
   margin-left: 20px;
   color: #fff;
   font-size: 700%;
+  letter-spacing: -1.5px;
+}
+
+.home .info .info-title img {
+  pointer-events: auto;
 }
 
 .home .info .info-body {
@@ -150,7 +167,8 @@ canvas {
   animation-delay: 0.2s;
   margin-top: 5px;
   font-size: 150%;
-  color: #777;
+  color: #757575;
+  letter-spacing: 0.25px;
 }
 
 .home .info .info-body .terminal {
@@ -208,6 +226,11 @@ canvas {
   display: inline-block;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  font-size: 3em;
+}
+
+.home .info .info-buttons .social-buttons a.email:hover {
+  color: #fff;
 }
 
 .home .info .info-buttons .social-buttons a.linkedin:hover {
@@ -271,6 +294,48 @@ img.me {
   animation-delay: 0.4s;
 }
 
+.more-info {
+  letter-spacing: .12px;
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.more-info .fa-heart {
+  color: #ff4757;
+  margin-right: 8px;
+}
+
+.more-info a.linux-text {
+  text-decoration: none;
+  font-weight: 700;
+  color: #9E9E9E;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.more-info a.linux-text:hover {
+  color: #F5BE0C;
+}
+
+.block {
+  display: block;
+}
+
+.text-mono {
+  font-family: "Roboto Mono", monospace;
+}
+
+.android-text {
+  font-weight: 700;
+  color: #9E9E9E;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.android-text:hover {
+  color: #32DE84;
+}
+
 #nav-projects {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
@@ -296,6 +361,9 @@ img.me {
   .home .info .info-body {
     font-size: 120%;
   }
+  .more-info {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 624px) {
@@ -311,6 +379,12 @@ img.me {
   .home .info .info-body {
     font-size: 100%;
   }
+  .more-info {
+    font-size: 15px;
+  }
+  .social-buttons a {
+    font-size: 2.3em !important;
+  }
 }
 
 @media (max-width: 430px) {
@@ -318,6 +392,12 @@ img.me {
     margin-top: 10px;
     margin-left: 0 !important;
     display: block;
+  }
+  .more-info {
+    font-size: 14px;
+  }
+  .social-buttons a {
+    font-size: 2em !important;
   }
 }
 

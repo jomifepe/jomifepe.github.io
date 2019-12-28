@@ -2,7 +2,8 @@ doctype
 html(lang="en")
 	head
 		- var author = "José Pereira"
-		- var description = "I'm a Software Developer and Computer Engineering student based in Leiria, Portugal. This is my personal page, where I publish my work and talk about my skills."
+		- var email = "jmfp-b@live.com.pt"
+		- var description = "I'm a Software Developer and Computer Engineering student from Leiria, Portugal. This is my personal page, where I publish my work and talk about my skills."
 
 		meta(charset="UTF-8")
 		meta(name='description', content=description)
@@ -26,6 +27,7 @@ html(lang="en")
 		link(rel="stylesheet" href="./vendors/font-awesome/css/fontawesome-all.min.css")
 		link(rel="stylesheet" href="./resources/css/style.css")
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700")
 
 		link(rel="apple-touch-icon" sizes="180x180" href="./resources/images/favicon/apple-touch-icon.png")
 		link(rel="icon" type="image/png" sizes="32x32" href="./resources/images/favicon/favicon-32x32.png")
@@ -44,22 +46,32 @@ html(lang="en")
 							img.me(src="resources/images/me.jpg", alt="A picture of me")
 							span José Pereira
 						.info-body
-							span 
+							span.block
 								| I'm a 
 								span.terminal
 									span.terminal-prompt $ 
 									span.terminal-text(data-content="Software Developer")
 									span.terminal-caret _
 								|  and Computer Engineering student based in Leiria, Portugal 
-								img.country-flag(src="./resources/images/country-flag.png")
+								img.country-flag(src="./resources/images/country-flag.png" alt="Image of the flag of my country, Portugal")
+							hr.faded-10
+							span.block.more-info
+								i.fas.fa-heart
+								| Passionate about 
+								span.android-text Android
+								| , mobile in general, and 
+								a.linux-text(href="https://github.com/jomifepe/dotfiles" target="_blank" title="My dotfiles") Linux 
+								| 🐧
 						.info-buttons
 							.social-buttons.pull-right
+								a.email(href="mailto:" + email target="_blank" title="Contact me")
+									i.fas.fa-envelope-square
 								a.github(href="https://github.com/jomifepe" target="_blank" title="Github")
-									i.fab.fa-github.fa-3x
+									i.fab.fa-github
 								a.linkedin(href="https://linkedin.com/in/jomifepe" target="_blank" title="Linkedin")
-									i.fab.fa-linkedin.fa-3x
+									i.fab.fa-linkedin
 								a.greasyfork(href="https://greasyfork.org/users/192987" target="_blank" title="Greasyfork")
-									i.fab.fa-js-square.fa-3x
+									i.fab.fa-js-square
 			.right
 				.content-wrapper
 		script(src="./vendors/jquery/js/jquery-2.1.1.min.js")
